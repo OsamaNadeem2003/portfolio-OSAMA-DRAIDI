@@ -10,7 +10,7 @@ export const PROFILE = {
   gender: "Male",
   github: "https://github.com/OsamaNadeem2003",
   codeforces: "https://codeforces.com/profile/OsamaNadeem",
-  cvPdfPath: "/assets/Osama-Nadeem-Resume.pdf",
+ cvPdfPath: "/assets/Osama-Nadeem-Resume 2026.pdf",
 
   // ✅ NEW socials
   facebook: "https://facebook.com/", // ضع رابطك الحقيقي

@@ -13,6 +13,7 @@ import {
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import DownloadRoundedIcon from "@mui/icons-material/DownloadRounded";
 import OpenInNewRoundedIcon from "@mui/icons-material/OpenInNewRounded";
+import PictureAsPdfRoundedIcon from "@mui/icons-material/PictureAsPdfRounded";
 import { useTheme } from "@mui/material/styles";
 
 export default function CvDialog({ open, onClose, pdfPath, fullName }) {
@@ -23,12 +24,15 @@ export default function CvDialog({ open, onClose, pdfPath, fullName }) {
     <Dialog open={open} onClose={onClose} fullWidth maxWidth="md">
       <DialogTitle sx={{ pb: 1.2 }}>
         <Stack direction="row" alignItems="center" justifyContent="space-between">
-          <Box>
-            <Typography sx={{ fontWeight: 900 }}>CV Preview</Typography>
-            <Typography sx={{ color: "text.secondary", fontSize: 13.5 }}>
-              {fullName}
-            </Typography>
-          </Box>
+          <Stack direction="row" spacing={1} alignItems="center">
+            <PictureAsPdfRoundedIcon />
+            <Box>
+              <Typography sx={{ fontWeight: 900 }}>CV Preview</Typography>
+              <Typography sx={{ color: "text.secondary", fontSize: 13.5 }}>
+                {fullName}
+              </Typography>
+            </Box>
+          </Stack>
 
           <IconButton onClick={onClose} aria-label="close">
             <CloseRoundedIcon />
@@ -38,6 +42,7 @@ export default function CvDialog({ open, onClose, pdfPath, fullName }) {
 
       <DialogContent sx={{ pt: 0 }}>
         <Stack direction={{ xs: "column", sm: "row" }} spacing={1} sx={{ mb: 1.5 }}>
+          {/* ✅ Download */}
           <Button
             component="a"
             href={pdfPath}
@@ -49,6 +54,7 @@ export default function CvDialog({ open, onClose, pdfPath, fullName }) {
             Download PDF
           </Button>
 
+          {/* ✅ Open in new tab */}
           <Button
             component="a"
             href={pdfPath}
@@ -71,9 +77,10 @@ export default function CvDialog({ open, onClose, pdfPath, fullName }) {
             backgroundColor: t.palette.background.paper,
           })}
         >
+          {/* ✅ Embed/preview */}
           <iframe
             title="CV PDF"
-            src={pdfPath}
+            src={`${pdfPath}#view=FitH`}
             style={{ width: "100%", height: "100%", border: 0 }}
           />
         </Box>

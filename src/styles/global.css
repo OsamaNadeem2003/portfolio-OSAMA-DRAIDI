@@ -1,0 +1,27 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+
+/* Experience glow hover (card overlay) */
+.expGlow {
+  opacity: 0;
+}
+.MuiBox-root:hover > .expGlow {
+  opacity: 1;
+}

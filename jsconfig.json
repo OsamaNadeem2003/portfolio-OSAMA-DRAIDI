@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "baseUrl": "src",
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "checkJs": true,
+    "resolveJsonModule": true,
+    "lib": ["es6", "dom", "es2017"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build"]
+}

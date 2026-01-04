@@ -1,0 +1,11 @@
+:root { color-scheme: light dark; }
+html, body { height: 100%; }
+body { margin: 0; }
+* { box-sizing: border-box; }
+
+.top-progress{
+  position: fixed;
+  left: 0; right: 0; top: 0;
+  height: 3px;
+  z-index: 9999;
+}

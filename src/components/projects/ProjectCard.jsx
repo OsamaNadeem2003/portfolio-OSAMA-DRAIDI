@@ -14,6 +14,9 @@ import LinkRoundedIcon from "@mui/icons-material/LinkRounded";
 import { MotionBox } from "../common/Motion";
 
 export default function ProjectCard({ project }) {
+  const hasLive = Boolean(project?.liveUrl);
+  const hasRepo = Boolean(project?.repoUrl);
+
   return (
     <MotionBox
       whileHover={{ y: -4 }}
@@ -22,14 +25,12 @@ export default function ProjectCard({ project }) {
       <Card
         sx={(t) => ({
           border: `1px solid ${t.palette.divider}`,
-          // ✅ قللنا ال radius للكارد
           borderRadius: 3,
           overflow: "hidden",
           transition: "0.25s",
           "&:hover": { borderColor: t.palette.primary.main },
         })}
       >
-        {/* IMAGE HEADER */}
         <Box
           sx={{
             height: 170,
@@ -51,7 +52,6 @@ export default function ProjectCard({ project }) {
             />
           )}
 
-          {/* overlay */}
           <Box
             sx={(t) => ({
               position: "absolute",
@@ -63,7 +63,6 @@ export default function ProjectCard({ project }) {
             })}
           />
 
-          {/* meta chip */}
           {project.meta && (
             <Chip
               label={project.meta}
@@ -73,7 +72,7 @@ export default function ProjectCard({ project }) {
                 left: 12,
                 bottom: 12,
                 fontWeight: 900,
-                borderRadius: 2, // ✅ أقل
+                borderRadius: 2,
                 backgroundColor:
                   t.palette.mode === "dark"
                     ? "rgba(15,23,42,0.72)"
@@ -101,21 +100,23 @@ export default function ProjectCard({ project }) {
           </Typography>
         </CardContent>
 
-        {/* ✅ شلنا More وخَلّينا فقط Live + GitHub */}
         <CardActions sx={{ px: 2, pb: 2, pt: 0.5 }}>
           <Stack direction="row" spacing={1} sx={{ width: "100%" }}>
             <Button
               component="a"
-              href={project.liveUrl}
+              href={hasLive ? project.liveUrl : undefined}
               target="_blank"
               rel="noreferrer"
               variant="outlined"
               startIcon={<LinkRoundedIcon />}
+              disabled={!hasLive}
               sx={{
                 flex: 1,
-                borderRadius: 2.5, // ✅ أقل من قبل
+                borderRadius: 2.5,
                 py: 1.05,
                 fontWeight: 900,
+                opacity: hasLive ? 1 : 0.6,
+                pointerEvents: hasLive ? "auto" : "none",
               }}
             >
               Live
@@ -123,16 +124,19 @@ export default function ProjectCard({ project }) {
 
             <Button
               component="a"
-              href={project.repoUrl}
+              href={hasRepo ? project.repoUrl : undefined}
               target="_blank"
               rel="noreferrer"
               variant="outlined"
               startIcon={<GitHubIcon />}
+              disabled={!hasRepo}
               sx={{
                 flex: 1,
-                borderRadius: 2.5, // ✅ أقل
+                borderRadius: 2.5,
                 py: 1.05,
                 fontWeight: 900,
+                opacity: hasRepo ? 1 : 0.6,
+                pointerEvents: hasRepo ? "auto" : "none",
               }}
             >
               GitHub

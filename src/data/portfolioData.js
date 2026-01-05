@@ -1,7 +1,7 @@
 // src/data/portfolioData.js
 
 export const PROFILE = {
-  fullName: "Osama Nadeem Draidi",
+  fullName: "Osama Nadeem Draidi", // اسم الموقع (مش شرط يطابق اسم فيسبوك)
   email: "osama.duraidy@gmail.com",
   phone: "+970 593027848",
   location: "Palestine – Tulkarm",
@@ -10,20 +10,18 @@ export const PROFILE = {
   gender: "Male",
   github: "https://github.com/OsamaNadeem2003",
   codeforces: "https://codeforces.com/profile/OsamaNadeem",
- cvPdfPath: "/assets/Osama-Nadeem-Resume 2026.pdf",
+  cvPdfPath: "/assets/Osama-Nadeem 2026.pdf",
 
-  // ✅ NEW socials
-  facebook: "https://facebook.com/", // ضع رابطك الحقيقي
-  linkedin: "https://www.linkedin.com/", // ضع رابطك الحقيقي
+  // ✅ socials (روابطك الحقيقية)
+  facebook: "https://www.facebook.com/osama.duraidy",
+  linkedin:
+    "https://www.linkedin.com/in/osama-draidi-a1599129b/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B7sHLcshXQJq%2FL3H3Ip9f2Q%3D%3D",
 };
 
 export const NAV_ITEMS = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
-
-  // ✅ بدل experience
   { id: "courses", label: "Courses" },
-
   { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
 ];
@@ -46,7 +44,6 @@ export const EDUCATION = [
 ];
 
 export const COURSES = [
-  // ✅ NEW (مثل الصورة الثانية)
   {
     period: "05/2025 – 07/2025",
     title: "Using AI as Personal Assistant Training",
@@ -72,8 +69,6 @@ export const COURSES = [
   },
 ];
 
-
-
 export const SKILLS = [
   "C++",
   "JAVA",
@@ -97,32 +92,28 @@ export const FILTERS = [
   { key: "htmlcss", label: "HTML & CSS" },
   { key: "js", label: "JavaScript" },
   { key: "reactmui", label: "React & MUI" },
-
-  // ✅ removed (Node & Express)
 ];
 
 export const PROJECTS = [
-  // ✅ NEW: Graduation project (LUQMA) + صورة Eat.png
   {
     id: 1,
     category: "reactmui",
     title: "Graduation Project (LUQMA)",
     desc: "A graduation project restaurant management web application with real-world UX and modern front-end architecture.",
-    liveUrl: "https://example.com",
-    repoUrl: "https://github.com/OsamaNadeem2003",
+    liveUrl: "",
+    repoUrl: "",
     image: "/assets/Eat.png",
     accent:
       "linear-gradient(135deg, rgba(255,165,0,0.30), rgba(46,160,255,0.22))",
     meta: "Academic • Supervised",
   },
-
   {
     id: 2,
     category: "reactmui",
     title: "Portfolio (React + MUI)",
     desc: "Clean layout, responsive, with dark/light mode and reusable components.",
-    liveUrl: "https://example.com",
-    repoUrl: "https://github.com/OsamaNadeem2003",
+    repoUrl: "https://github.com/OsamaNadeem2003/portfolio-OSAMA-DRAIDI",
+    liveUrl: "https://portfolio-osama-draidi.vercel.app/",
     image: "/assets/portfolio.png",
     accent:
       "linear-gradient(135deg, rgba(46,160,255,0.35), rgba(124,58,237,0.25))",
@@ -133,8 +124,8 @@ export const PROJECTS = [
     category: "js",
     title: "CRUD Operations",
     desc: "CRUD app structure with forms, validation, and data handling (sample).",
-    liveUrl: "https://example.com",
-    repoUrl: "https://github.com/OsamaNadeem2003",
+    repoUrl: "https://github.com/OsamaNadeem2003/CRUD---Operation",
+    liveUrl: "https://crud-operation-osama.vercel.app/",
     image: "/assets/CRUD.png",
     accent:
       "linear-gradient(135deg, rgba(34,197,94,0.30), rgba(46,160,255,0.22))",

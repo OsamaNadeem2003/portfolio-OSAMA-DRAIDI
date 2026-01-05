@@ -13,7 +13,6 @@ import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-
 import { PROFILE } from "../../data/portfolioData";
 import { MotionBox, fadeUp } from "../common/Motion";
 
@@ -41,7 +40,12 @@ export default function Contact() {
           </Stack>
         </Typography>
 
-        <Typography sx={(t) => ({ mt: 0.8, color: t.palette.text.secondary })}>
+        <Typography
+          sx={(t) => ({
+            mt: 0.8,
+            color: t.palette.text.secondary,
+          })}
+        >
           Email: {PROFILE.email} • Phone: {PROFILE.phone}
         </Typography>
       </MotionBox>
@@ -71,7 +75,7 @@ export default function Contact() {
         >
           <Stack spacing={2}>
             <TextField
-              label="Your Email *"
+              label="Your Email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -80,7 +84,7 @@ export default function Contact() {
             />
 
             <TextField
-              label="Message *"
+              label="Message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
@@ -89,12 +93,7 @@ export default function Contact() {
               fullWidth
             />
 
-            <Button
-              type="submit"
-              variant="contained"
-              size="large"
-              sx={{ py: 1.2 }}
-            >
+            <Button type="submit" variant="contained" size="large" sx={{ py: 1.2 }}>
               Submit
             </Button>
 
@@ -113,7 +112,7 @@ export default function Contact() {
                 variant="outlined"
                 sx={{ borderRadius: 3 }}
               >
-                Email Me
+                Email Me: {PROFILE.email}
               </Button>
 
               <Button
@@ -125,7 +124,7 @@ export default function Contact() {
                 variant="outlined"
                 sx={{ borderRadius: 3 }}
               >
-                WhatsApp
+                WhatsApp: {PROFILE.phone}
               </Button>
 
               <Button
@@ -137,7 +136,7 @@ export default function Contact() {
                 variant="outlined"
                 sx={{ borderRadius: 3 }}
               >
-                Facebook
+                Facebook: osama duraidy 
               </Button>
 
               <Button
@@ -149,7 +148,7 @@ export default function Contact() {
                 variant="outlined"
                 sx={{ borderRadius: 3 }}
               >
-                LinkedIn
+                LinkedIn: osama draidi
               </Button>
             </Stack>
           </Stack>

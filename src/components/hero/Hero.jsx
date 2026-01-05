@@ -35,7 +35,7 @@ export default function Hero() {
           <Box>
             <Stack direction="row" spacing={1.2} alignItems="flex-end">
               <Avatar
-                src="/assets/osama-mod.png"
+                src="/assets/osama portfolio.png"
                 alt={PROFILE.fullName}
                 sx={(t) => ({
                   width: 88,
